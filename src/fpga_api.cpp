@@ -100,9 +100,9 @@ const float* __attribute__((optimize("O0"))) FPGA::blockMM()
   // fpga version
   clock_t start = clock();
   *output_ = 0x5555;
+  while(*output_ == 0x5555);
   clock_t end = clock();
   time_accum += {double}(end - start);
-  while(*output_ == 0x5555);
 
   return data_M;    
 }
